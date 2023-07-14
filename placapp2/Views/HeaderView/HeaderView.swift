@@ -10,9 +10,13 @@ import SwiftUI
 struct HeaderView: View {
     var title: String
     
+    init(title: String) {
+        self.title = title
+    }
+    
     var body: some View {
         VStack(alignment: .leading) {
-            Text("Tus Vehiculos")
+            Text(title)
                 .font(.title)
                 .fontWeight(.bold)
                 .foregroundColor(.black)
@@ -25,5 +29,6 @@ struct HeaderView: View {
 
 struct Previews_HeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()    }
+        HeaderView(title: "Agrega la placa")
+    }
 }

@@ -13,6 +13,7 @@
 		6F9C9ECE2A61A457003E00BA /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9C9ECD2A61A457003E00BA /* HeaderView.swift */; };
 		6F9C9ED12A61AA98003E00BA /* VehicleInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9C9ED02A61AA98003E00BA /* VehicleInterface.swift */; };
 		6F9C9ED42A61AB40003E00BA /* ContentView_Previews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9C9ED32A61AB40003E00BA /* ContentView_Previews.swift */; };
+		6F9C9ED72A61B9A4003E00BA /* AddLicense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9C9ED62A61B9A4003E00BA /* AddLicense.swift */; };
 		C838A5F02A610BE100771CB4 /* placapp2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = C838A5EF2A610BE100771CB4 /* placapp2App.swift */; };
 		C838A5F22A610BE100771CB4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C838A5F12A610BE100771CB4 /* ContentView.swift */; };
 		C838A5F42A610BE400771CB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C838A5F32A610BE400771CB4 /* Assets.xcassets */; };
@@ -46,6 +47,7 @@
 		6F9C9ECD2A61A457003E00BA /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		6F9C9ED02A61AA98003E00BA /* VehicleInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleInterface.swift; sourceTree = "<group>"; };
 		6F9C9ED32A61AB40003E00BA /* ContentView_Previews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView_Previews.swift; sourceTree = "<group>"; };
+		6F9C9ED62A61B9A4003E00BA /* AddLicense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLicense.swift; sourceTree = "<group>"; };
 		C838A5EC2A610BE100771CB4 /* placapp2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = placapp2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C838A5EF2A610BE100771CB4 /* placapp2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = placapp2App.swift; sourceTree = "<group>"; };
 		C838A5F12A610BE100771CB4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 		6F9C9EB32A61A24D003E00BA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				6F9C9ED52A61B98C003E00BA /* AddLicense */,
 				6F9C9ED22A61AB2B003E00BA /* ContentPreviews */,
 				6F9C9ECC2A61A448003E00BA /* HeaderView */,
 				6F9C9EC62A61A3E5003E00BA /* Vehicles */,
@@ -141,6 +144,14 @@
 				6F9C9ED32A61AB40003E00BA /* ContentView_Previews.swift */,
 			);
 			path = ContentPreviews;
+			sourceTree = "<group>";
+		};
+		6F9C9ED52A61B98C003E00BA /* AddLicense */ = {
+			isa = PBXGroup;
+			children = (
+				6F9C9ED62A61B9A4003E00BA /* AddLicense.swift */,
+			);
+			path = AddLicense;
 			sourceTree = "<group>";
 		};
 		C838A5E32A610BE100771CB4 = {
@@ -338,6 +349,7 @@
 				6F9C9ECE2A61A457003E00BA /* HeaderView.swift in Sources */,
 				6F9C9EC82A61A3F1003E00BA /* Vehicles.swift in Sources */,
 				6F9C9EB62A61A282003E00BA /* NavBar.swift in Sources */,
+				6F9C9ED72A61B9A4003E00BA /* AddLicense.swift in Sources */,
 				6F9C9ED42A61AB40003E00BA /* ContentView_Previews.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
