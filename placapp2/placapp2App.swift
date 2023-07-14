@@ -15,3 +15,10 @@ struct placapp2App: App {
         }
     }
 }
+
+
+struct Previews_placapp2App_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}
