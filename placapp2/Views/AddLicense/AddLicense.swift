@@ -38,22 +38,28 @@ struct AddLicense: View {
                                                   .foregroundColor(.white)
                                                   .padding(.leading, 16)
                                           )
-                                          .padding(.top, 20)
+                                          .padding(.vertical, 20)
                 }
                 
                 Button(action: {
                     // Add your action here
                 }) {
-                    HStack {
-                        Text("Agregar")
-                            .foregroundColor(.white)
-                        Image(systemName: "arrow.right")
-                            .foregroundColor(.white)
-                    }
-                    .padding()
-                    .frame(width: 375)
-                    .background(Color.black)
-                    .cornerRadius(10)
+                    HStack(spacing: 16) {
+                         Button(role: .none) {
+                             // none
+                         } label: {
+                             Text("Agregar")
+                                 .frame(
+                                     maxWidth: .infinity,
+                                     minHeight: 30,
+                                     maxHeight: 30,
+                                     alignment: .center
+                                 )
+                             Image(systemName: "arrow.right")
+                                 .foregroundColor(.white)
+                         }
+                         .buttonStyle(.borderedProminent)
+                     }
                 }
             }
             .padding(.top, 8) // Adjust top padding of header and content
