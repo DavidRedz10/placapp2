@@ -29,6 +29,7 @@ struct NavBar: View {
                     Label("Profile", systemImage: "person.circle")
                 }
         }
+        .background(Color(hue: 1.0, saturation: 0.006, brightness: 0.564))
         .accentColor(Color(UIColor(red: 25/255, green: 29/255, blue: 33/255, alpha: 1.0)))
         .onAppear {
             let unselectedColor = UIColor(red: 172/255, green: 184/255, blue: 194/255, alpha: 1.0)
