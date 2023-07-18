@@ -6,9 +6,18 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct Auto: View {
+    
     var vehicle: Vehicle
+    
+      @Environment(\.managedObjectContext) private var viewContext
+      @FetchRequest(
+          sortDescriptors: [NSSortDescriptor(keyPath: \License.plate, ascending: true)],
+          animation: .default
+      ) private var licenses: FetchedResults<License>
+    
     var body: some View {
         VStack(alignment: .leading) {
             HeaderView(title: "Tus Vehículos")
@@ -19,13 +28,14 @@ struct Auto: View {
                     HStack {
                         VStack(spacing: 16) {
                             ScrollView(.horizontal, showsIndicators: false) {
-                                HStack(spacing: 16) {
-                                    Product_Cell( subtitle: "HLT-35G", thumbnail: Image("carro"), title: "Picanto")
-                                    Product_Cell( subtitle: "CRA-192", thumbnail: Image("carro"), title: "CR-V")
-                                    Product_Cell( subtitle: "JLT-136", thumbnail: Image("carro"), title: "Mercho")
-                                }
-                                .padding(EdgeInsets(top: 0, leading: 16, bottom: 16, trailing: 16))
-                            }
+                                ForEach(licenses, id: \.self) { license in
+                                    HStack(spacing: 16) {
+                                        Product_Cell( subtitle: "HLT-35G", thumbnail: Image("carro"), title: "Picanto")
+                                        Product_Cell( subtitle: "CRA-192", thumbnail: Image("carro"), title: "CR-V")
+                                        
+                                    }
+                                    .padding(EdgeInsets(top: 0, leading: 16, bottom: 16, trailing: 16))
+                                }}
                         }
                     }
                     

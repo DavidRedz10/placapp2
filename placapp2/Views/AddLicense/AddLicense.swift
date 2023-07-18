@@ -6,15 +6,20 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct AddLicense: View {
+       @Environment(\.managedObjectContext) private var viewContext
+       
+       @State private var inputNumber = ""
+       @State private var inputRemarks = ""
+    
     var body: some View {
         VStack(alignment: .leading) {
             Image("Image")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .padding(.vertical, 40) // Add padding between image and header
-               
+                .padding(.vertical, 40)
             
             VStack(alignment: .leading) {
                 HeaderView(title: "Agrega la placa")
@@ -25,9 +30,8 @@ struct AddLicense: View {
                         .cornerRadius(4)
                         .frame(height: 50)
                         .overlay(
-                            TextField("XXX-XXX", text: .constant(""))
-                                .foregroundColor(.white)
-                                .padding(.leading, 16)
+                            TextField("XXX-XXX", text: $inputNumber)
+                                .foregroundColor(.black) .padding(.leading, 16)
                         )
                         .padding([.top, .leading, .trailing], 20)
                     
@@ -36,15 +40,15 @@ struct AddLicense: View {
                         .cornerRadius(4)
                         .frame(height: 50)
                         .overlay(
-                            TextField("Descripcion", text: .constant(""))
-                                .foregroundColor(.white)
+                            TextField("Descripcion", text: $inputRemarks)
+                                .foregroundColor(.black)
                                 .padding(.leading, 16)
                         )
                         .padding(.all, 20)
                 }
                 
                 Button(action: {
-                    // Add your action here
+                    saveLicense()
                 }) {
                     HStack(spacing: 16) {
                         Button(role: .none) {
@@ -65,14 +69,38 @@ struct AddLicense: View {
                     }
                 }
             }
-            .padding(.top, 8) // Adjust top padding of header and content
+            .padding(.top, 8)
             
-            Spacer() // Fill remaining vertical space
+            Spacer()
         }
         .padding()
         .background(Color.white)
-        .edgesIgnoringSafeArea(.all) // Optional, to extend the background color to the edges of the screen
+        .edgesIgnoringSafeArea(.all)
     }
+    
+    private func saveLicense() {
+        
+           let newLicense = License(context: viewContext)
+           
+           newLicense.plate = inputNumber
+           newLicense.remarks = inputRemarks
+           
+           do {
+               try viewContext.save()
+           if viewContext.hasChanges {
+               print("Context has pending changes.")
+               let insertedObjects = viewContext.insertedObjects.compactMap { $0 as? License }
+               for license in insertedObjects {
+                   print("New License: \(license)")
+               }
+           }
+       } catch {
+               print("Error saving license: \(error.localizedDescription)")
+           }
+           
+           inputNumber = ""
+           inputRemarks = ""
+       }
 }
 
 struct Previews_AddVehicles_Previews: PreviewProvider {

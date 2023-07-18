@@ -9,6 +9,4 @@ import SwiftUI
 
 struct Vehicle {
     var image: Image
-    var subtitle: String
-    var title: String
 }

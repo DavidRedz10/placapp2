@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct NavBar: View {
+    @Environment(\.managedObjectContext) private var viewContext
     init() {
         // Change the appearance of the UITabBar
         UITabBar.appearance().barTintColor = .white
@@ -16,7 +17,8 @@ struct NavBar: View {
     
     var body: some View {
         TabView {
-            Auto(vehicle: Vehicle(image: Image("carro"), subtitle: "Tiene Pico y Placa", title: "IFR427"))
+            Auto(vehicle: Vehicle(image: Image("carro")))
+                .environment(\.managedObjectContext, viewContext)
                 .tabItem {
                     Label("Vehiculos.", systemImage: "car.fill")
                 }
@@ -24,7 +26,7 @@ struct NavBar: View {
                 .tabItem {
                     Label("Agregar", systemImage: "plus.circle.fill")
                 }
-            Auto(vehicle: Vehicle(image: Image("Placeholder"), subtitle: "Subtitle", title: "Title"))
+            Auto(vehicle: Vehicle(image: Image("Placeholder")))
                 .tabItem {
                     Label("Profile", systemImage: "person.circle")
                 }
