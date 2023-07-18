@@ -16,7 +16,7 @@ struct NavBar: View {
     
     var body: some View {
         TabView {
-            Auto(vehicle: Vehicle(image: Image("image-removebg-preview"), subtitle: "Tiene Pico y Placa", title: "IFR427"))
+            Auto(vehicle: Vehicle(image: Image("carro"), subtitle: "Tiene Pico y Placa", title: "IFR427"))
                 .tabItem {
                     Label("Vehiculos.", systemImage: "car.fill")
                 }
@@ -29,7 +29,7 @@ struct NavBar: View {
                     Label("Profile", systemImage: "person.circle")
                 }
         }
-        .background(Color(hue: 1.0, saturation: 0.006, brightness: 0.564))
+        .background(Color.white)
         .accentColor(Color(UIColor(red: 25/255, green: 29/255, blue: 33/255, alpha: 1.0)))
         .onAppear {
             let unselectedColor = UIColor(red: 172/255, green: 184/255, blue: 194/255, alpha: 1.0)

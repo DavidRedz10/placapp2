@@ -9,56 +9,147 @@ import SwiftUI
 
 struct Auto: View {
     var vehicle: Vehicle
-    
     var body: some View {
         VStack(alignment: .leading) {
+            HeaderView(title: "Tus Vehículos")
+                .padding()
             ScrollView(.vertical, showsIndicators: true) {
+                Spacer()
                 VStack(spacing: 16) {
-                    HeaderView(title: "Tus Vehículos")
                     HStack {
-                        VStack(spacing: 0) {
-                            vehicle.image
-                                .resizable(resizingMode: .stretch)
-                                .padding(EdgeInsets(top: 0, leading: 32, bottom: 0, trailing: 32))
-                                .scaledToFit()
-                                .frame(width: 250, height: 200, alignment: .center)
-                            
-                            HStack(spacing: 0) {
-                                Text(vehicle.title)
-                                    .padding(EdgeInsets(top: 16, leading: 16, bottom: 16, trailing: 16))
-                                    .font(.system(.headline, design: .monospaced))
-                                    .textCase(.uppercase)
-                                    .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 0))
-                                    .frame(width: 179, height: 40, alignment: .center)
-                                
-                                Text(vehicle.subtitle)
-                                    .multilineTextAlignment(.leading)
-                                    .italic()
-                                    .frame(width: 110, height: 50, alignment: .center)
-                                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 14, trailing: 0))
+                        VStack(spacing: 16) {
+                            ScrollView(.horizontal, showsIndicators: false) {
+                                HStack(spacing: 16) {
+                                    Product_Cell( subtitle: "HLT-35G", thumbnail: Image("carro"), title: "Picanto")
+                                    Product_Cell( subtitle: "CRA-192", thumbnail: Image("carro"), title: "CR-V")
+                                    Product_Cell( subtitle: "JLT-136", thumbnail: Image("carro"), title: "Mercho")
+                                }
+                                .padding(EdgeInsets(top: 0, leading: 16, bottom: 16, trailing: 16))
                             }
                         }
                     }
-                    .background(alignment: .center) {
-                        RoundedRectangle(cornerRadius: 27, style: .continuous)
-                            .fill(Color(red: 0.8705882352941177, green: 0.615686274509804, blue: 0.615686274509804))
-                    }
                     
-                    Divider()
-                        .frame(maxWidth: .infinity, alignment: .center)
                 }
-                .padding(EdgeInsets(top: 16, leading: 16, bottom: 16, trailing: 16))
-                .navigationTitle("Title")
-                .navigationBarTitleDisplayMode(.inline)
             }
         }
-        .padding()
-        .background(Color(hue: 1.0, saturation: 0.006, brightness: 0.564))
+        
+        
     }
-}
-
-
-struct Previews_Auto_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()    }
+    
+    
+    
+    struct Previews_Auto_Previews: PreviewProvider {
+        static var previews: some View {
+            ContentView()    }
+    }
+    
+    
+    struct Product_Cell: View {
+        var oldPrice = "$999"
+        var subtitle = "Subtitle"
+        var thumbnail = Image("carro")
+        var title = "Title"
+        
+        var body: some View {
+            VStack(spacing: 6) {
+                ZStack(alignment: .topTrailing) {
+                    Square_Image(image: thumbnail)
+                        .mask(alignment: .center) {
+                            RoundedRectangle(
+                                cornerRadius: 10,
+                                style: .circular
+                            )
+                            .fill(Color(uiColor: .systemGray))
+                        }
+                    // Condition: Conditional
+                    if false {
+                        Circle_Symbol()
+                            .padding(EdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8))
+                    }
+                }
+                VStack(alignment: .leading, spacing: 0) {
+                    Text(title)
+                        .font(.system(.subheadline, design: .default))
+                        .bold()
+                    Text(subtitle)
+                        .font(.system(.subheadline, design: .default))
+                        .foregroundColor(Color(uiColor: .systemBlue))
+                    
+                    HStack {
+                        
+                        Spacer()
+                        // Condition: Conditional
+                        if false {
+                            ZStack {
+                                Text(oldPrice)
+                                    .font(.system(.subheadline, design: .default))
+                                    .foregroundColor(Color(uiColor: .tertiaryLabel))
+                                
+                                Rectangle()
+                                    .fill(Color(uiColor: .tertiaryLabel))
+                                    .frame(
+                                        height: 1,
+                                        alignment: .center
+                                    )
+                                    .layoutPriority(-1)
+                            }
+                            
+                            
+                        }
+                    }
+                }
+                .frame(
+                    maxWidth: .infinity,
+                    alignment: .leading
+                )
+            }
+        }
+    }
+    
+    
+    struct Square_Image: View {
+        var image = Image("Placeholder")
+        var validation = "Tiene pico y placa"
+        
+        var body: some View {
+            Rectangle()
+                .fill(Color(hue: 0.269, saturation: 0.113, brightness: 0.599))
+                .aspectRatio(contentMode: .fit)
+                .frame(height: 250)
+                .overlay(alignment: .center) {
+                    image
+                        .resizable()
+                        .scaledToFit()
+                        .padding(7)
+                    Text(validation)
+                        .foregroundColor(.white)
+                        .padding(.top, 200.0)
+                }
+                .mask(alignment: .center) {
+                    Rectangle()
+                        .fill(Color(uiColor: .systemGray))
+                        .cornerRadius(0)
+                    
+                }
+            
+            
+        }
+    }
+    
+    
+    struct Circle_Symbol: View {
+        var body: some View {
+            Circle()
+                .fill(Color(uiColor: .systemBlue))
+                .frame(
+                    width: 24,
+                    height: 24,
+                    alignment: .center
+                )
+            
+            Image(systemName: "percent")
+                .foregroundColor(Color(uiColor: .white))
+                .font(.system(size: 12.0, weight: .bold, design: .default))
+        }
+    }
 }

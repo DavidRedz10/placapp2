@@ -13,7 +13,7 @@ struct ContentView: View {
             NavBar()
                 .background(Color.white) // Set the background color to white
         }
-        .padding()
         .background(Color(red: 0.537, green: 0.541, blue: 0.541, opacity: 0.947))
+        
     }
 }
