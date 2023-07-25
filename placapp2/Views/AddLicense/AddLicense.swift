@@ -48,26 +48,20 @@ struct AddLicense: View {
                 }
                 
                 Button(action: {
-                    saveLicense()
-                }) {
-                    HStack(spacing: 16) {
-                        Button(role: .none) {
-                            // none
-                        } label: {
-                            Text("Agregar")
-                                .frame(
-                                    maxWidth: .infinity,
-                                    minHeight: 30,
-                                    maxHeight: 30,
-                                    alignment: .center
-                                )
-                            
-                            Image(systemName: "arrow.right")
-                                .foregroundColor(.white)
-                        }
-                        .buttonStyle(.borderedProminent)
-                    }
-                }
+                                  saveLicense()
+                              }) {
+                                  HStack {
+                                      Text("Agregar")
+                                          .foregroundColor(.white)
+                                      Image(systemName: "arrow.right")
+                                          .foregroundColor(.white)
+                                  }
+                                  .padding()
+                                  .frame(width: 375)
+                                  .background(Color.black)
+                                  .cornerRadius(10)
+                              }
+                
             }
             .padding(.top, 8)
             

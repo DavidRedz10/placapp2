@@ -30,12 +30,12 @@ struct Auto: View {
                             ScrollView(.horizontal, showsIndicators: false) {
                                 ForEach(licenses, id: \.self) { license in
                                     HStack(spacing: 16) {
-                                        Product_Cell( subtitle: "HLT-35G", thumbnail: Image("carro"), title: "Picanto")
-                                        Product_Cell( subtitle: "CRA-192", thumbnail: Image("carro"), title: "CR-V")
+                                        Product_Cell( subtitle: (license.plate ?? ""), thumbnail: Image("carro"), title: "Picanto")
                                         
                                     }
                                     .padding(EdgeInsets(top: 0, leading: 16, bottom: 16, trailing: 16))
-                                }}
+                                }
+                            }
                         }
                     }
                     

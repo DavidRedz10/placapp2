@@ -17,6 +17,6 @@ struct ContentView: View {
                 .background(Color.white).environment(\.managedObjectContext, viewContext)
         }
         .padding()
-        .background(Color(red: 0.537, green: 0.541, blue: 0.541, opacity: 0.947))
+        .background(Color.white)
     }
 }
