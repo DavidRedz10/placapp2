@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F000B722A66D8F80042AE28 /* LicenseModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6F000B702A66D8F80042AE28 /* LicenseModel.xcdatamodeld */; };
 		6F9C9EB62A61A282003E00BA /* NavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9C9EB52A61A282003E00BA /* NavBar.swift */; };
 		6F9C9EC22A61A3A1003E00BA /* Auto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9C9EC12A61A3A1003E00BA /* Auto.swift */; };
-		6F9C9EC82A61A3F1003E00BA /* Vehicles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9C9EC72A61A3F1003E00BA /* Vehicles.swift */; };
 		6F9C9ECE2A61A457003E00BA /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9C9ECD2A61A457003E00BA /* HeaderView.swift */; };
 		6F9C9ED12A61AA98003E00BA /* VehicleInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9C9ED02A61AA98003E00BA /* VehicleInterface.swift */; };
 		6F9C9ED42A61AB40003E00BA /* ContentView_Previews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9C9ED32A61AB40003E00BA /* ContentView_Previews.swift */; };
@@ -41,9 +41,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6F000B712A66D8F80042AE28 /* LicenseModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LicenseModel.xcdatamodel; sourceTree = "<group>"; };
 		6F9C9EB52A61A282003E00BA /* NavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBar.swift; sourceTree = "<group>"; };
 		6F9C9EC12A61A3A1003E00BA /* Auto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auto.swift; sourceTree = "<group>"; };
-		6F9C9EC72A61A3F1003E00BA /* Vehicles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicles.swift; sourceTree = "<group>"; };
 		6F9C9ECD2A61A457003E00BA /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		6F9C9ED02A61AA98003E00BA /* VehicleInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleInterface.swift; sourceTree = "<group>"; };
 		6F9C9ED32A61AB40003E00BA /* ContentView_Previews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView_Previews.swift; sourceTree = "<group>"; };
@@ -91,7 +91,6 @@
 				6F9C9ED52A61B98C003E00BA /* AddLicense */,
 				6F9C9ED22A61AB2B003E00BA /* ContentPreviews */,
 				6F9C9ECC2A61A448003E00BA /* HeaderView */,
-				6F9C9EC62A61A3E5003E00BA /* Vehicles */,
 				6F9C9EC02A61A393003E00BA /* Auto */,
 				6F9C9EB42A61A25F003E00BA /* NavBar */,
 			);
@@ -112,14 +111,6 @@
 				6F9C9EC12A61A3A1003E00BA /* Auto.swift */,
 			);
 			path = Auto;
-			sourceTree = "<group>";
-		};
-		6F9C9EC62A61A3E5003E00BA /* Vehicles */ = {
-			isa = PBXGroup;
-			children = (
-				6F9C9EC72A61A3F1003E00BA /* Vehicles.swift */,
-			);
-			path = Vehicles;
 			sourceTree = "<group>";
 		};
 		6F9C9ECC2A61A448003E00BA /* HeaderView */ = {
@@ -157,6 +148,7 @@
 		C838A5E32A610BE100771CB4 = {
 			isa = PBXGroup;
 			children = (
+				6F000B702A66D8F80042AE28 /* LicenseModel.xcdatamodeld */,
 				C838A5EE2A610BE100771CB4 /* placapp2 */,
 				C838A5FF2A610BE400771CB4 /* placapp2Tests */,
 				C838A6092A610BE400771CB4 /* placapp2UITests */,
@@ -345,9 +337,9 @@
 				C838A5F22A610BE100771CB4 /* ContentView.swift in Sources */,
 				6F9C9ED12A61AA98003E00BA /* VehicleInterface.swift in Sources */,
 				6F9C9EC22A61A3A1003E00BA /* Auto.swift in Sources */,
+				6F000B722A66D8F80042AE28 /* LicenseModel.xcdatamodeld in Sources */,
 				C838A5F02A610BE100771CB4 /* placapp2App.swift in Sources */,
 				6F9C9ECE2A61A457003E00BA /* HeaderView.swift in Sources */,
-				6F9C9EC82A61A3F1003E00BA /* Vehicles.swift in Sources */,
 				6F9C9EB62A61A282003E00BA /* NavBar.swift in Sources */,
 				6F9C9ED72A61B9A4003E00BA /* AddLicense.swift in Sources */,
 				6F9C9ED42A61AB40003E00BA /* ContentView_Previews.swift in Sources */,
@@ -523,7 +515,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.david.placapp2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.david.placapp22;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -553,7 +545,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.david.placapp2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.david.placapp22;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -677,6 +669,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6F000B702A66D8F80042AE28 /* LicenseModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6F000B712A66D8F80042AE28 /* LicenseModel.xcdatamodel */,
+			);
+			currentVersion = 6F000B712A66D8F80042AE28 /* LicenseModel.xcdatamodel */;
+			path = LicenseModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C838A5E42A610BE100771CB4 /* Project object */;
 }

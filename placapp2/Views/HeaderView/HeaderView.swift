@@ -23,6 +23,7 @@ struct HeaderView: View {
                 .multilineTextAlignment(.leading)
                 .padding()
             Divider()
+               
         }
     }
 }

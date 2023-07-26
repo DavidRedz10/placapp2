@@ -6,70 +6,99 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct AddLicense: View {
+       @Environment(\.managedObjectContext) private var viewContext
+       
+       @State private var inputNumber = ""
+       @State private var inputRemarks = ""
+    
     var body: some View {
         VStack(alignment: .leading) {
             Image("Image")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .padding(.bottom) // Add padding between image and header
+                .padding(.vertical, 40)
             
             VStack(alignment: .leading) {
                 HeaderView(title: "Agrega la placa")
                 
                 VStack {
                     Rectangle()
-                                          .foregroundColor(.white)
-                                          .cornerRadius(4)
-                                          .frame(height: 50)
-                                          .overlay(
-                                              TextField("XXX-XXX", text: .constant(""))
-                                                  .foregroundColor(.white)
-                                                  .padding(.leading, 16)
-                                          )
-                                      
-                                      Rectangle()
-                                          .foregroundColor(.white)
-                                          .cornerRadius(4)
-                                          .frame(height: 50)
-                                          .overlay(
-                                              TextField("Descripcion", text: .constant(""))
-                                                  .foregroundColor(.white)
-                                                  .padding(.leading, 16)
-                                          )
-                                          .padding(.vertical, 20)
+                               .foregroundColor(Color(hue: 1.0, saturation: 0.0, brightness: 0.793))
+                               .cornerRadius(4)
+                               .frame(height: 50)
+                               .overlay(
+                                   TextField("XXX-XXX", text: $inputNumber)
+                                       .foregroundColor(.black)
+                                       .padding(.leading, 16)
+                               )
+                               .padding([.top, .leading, .trailing], 20)
+                               .onChange(of: inputNumber) { newValue in
+                                   inputNumber = newValue.uppercased()
+                               }
+                    
+                    Rectangle()
+                        .foregroundColor(Color(hue: 1.0, saturation: 0.0, brightness: 0.793))
+                        .cornerRadius(4)
+                        .frame(height: 50)
+                        .overlay(
+                            TextField("Descripcion", text: $inputRemarks)
+                                .foregroundColor(.black)
+                                .padding(.leading, 16)
+                        )
+                        .padding(.all, 20)
                 }
                 
                 Button(action: {
-                    // Add your action here
-                }) {
-                    HStack(spacing: 16) {
-                         Button(role: .none) {
-                             // none
-                         } label: {
-                             Text("Agregar")
-                                 .frame(
-                                     maxWidth: .infinity,
-                                     minHeight: 30,
-                                     maxHeight: 30,
-                                     alignment: .center
-                                 )
-                             Image(systemName: "arrow.right")
-                                 .foregroundColor(.white)
-                         }
-                         .buttonStyle(.borderedProminent)
-                     }
-                }
+                                  saveLicense()
+                              }) {
+                                  HStack {
+                                      Text("Agregar")
+                                          .foregroundColor(.white)
+                                      Image(systemName: "arrow.right")
+                                          .foregroundColor(.white)
+                                  }
+                                  .padding()
+                                  .frame(width: 375)
+                                  .background(Color.black)
+                                  .cornerRadius(10)
+                              }
+                
             }
-            .padding(.top, 8) // Adjust top padding of header and content
+            .padding(.top, 8)
             
-            Spacer() // Fill remaining vertical space
+            Spacer()
         }
         .padding()
-        .background(Color(hue: 1.0, saturation: 0.006, brightness: 0.564))
-        .edgesIgnoringSafeArea(.all) // Optional, to extend the background color to the edges of the screen
+        .background(Color.white)
+        .edgesIgnoringSafeArea(.all)
     }
+    
+    private func saveLicense() {
+        
+           let newLicense = License(context: viewContext)
+           
+           newLicense.plate = inputNumber
+           newLicense.remarks = inputRemarks
+           
+           do {
+               try viewContext.save()
+           if viewContext.hasChanges {
+               print("Context has pending changes.")
+               let insertedObjects = viewContext.insertedObjects.compactMap { $0 as? License }
+               for license in insertedObjects {
+                   print("New License: \(license)")
+               }
+           }
+       } catch {
+               print("Error saving license: \(error.localizedDescription)")
+           }
+           
+           inputNumber = ""
+           inputRemarks = ""
+       }
 }
 
 struct Previews_AddVehicles_Previews: PreviewProvider {
