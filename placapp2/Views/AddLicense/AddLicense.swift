@@ -26,14 +26,18 @@ struct AddLicense: View {
                 
                 VStack {
                     Rectangle()
-                        .foregroundColor(Color(hue: 1.0, saturation: 0.0, brightness: 0.793))
-                        .cornerRadius(4)
-                        .frame(height: 50)
-                        .overlay(
-                            TextField("XXX-XXX", text: $inputNumber)
-                                .foregroundColor(.black) .padding(.leading, 16)
-                        )
-                        .padding([.top, .leading, .trailing], 20)
+                               .foregroundColor(Color(hue: 1.0, saturation: 0.0, brightness: 0.793))
+                               .cornerRadius(4)
+                               .frame(height: 50)
+                               .overlay(
+                                   TextField("XXX-XXX", text: $inputNumber)
+                                       .foregroundColor(.black)
+                                       .padding(.leading, 16)
+                               )
+                               .padding([.top, .leading, .trailing], 20)
+                               .onChange(of: inputNumber) { newValue in
+                                   inputNumber = newValue.uppercased()
+                               }
                     
                     Rectangle()
                         .foregroundColor(Color(hue: 1.0, saturation: 0.0, brightness: 0.793))
