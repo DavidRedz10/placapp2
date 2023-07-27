@@ -21,6 +21,9 @@
 		C838A6012A610BE400771CB4 /* placapp2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C838A6002A610BE400771CB4 /* placapp2Tests.swift */; };
 		C838A60B2A610BE400771CB4 /* placapp2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C838A60A2A610BE400771CB4 /* placapp2UITests.swift */; };
 		C838A60D2A610BE400771CB4 /* placapp2UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C838A60C2A610BE400771CB4 /* placapp2UITestsLaunchTests.swift */; };
+		C86812662A71DAB900ADCC0C /* Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86812652A71DAB900ADCC0C /* Details.swift */; };
+		C86812672A71DAB900ADCC0C /* Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86812652A71DAB900ADCC0C /* Details.swift */; };
+		C86812682A71DAB900ADCC0C /* Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86812652A71DAB900ADCC0C /* Details.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +61,7 @@
 		C838A6062A610BE400771CB4 /* placapp2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = placapp2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C838A60A2A610BE400771CB4 /* placapp2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = placapp2UITests.swift; sourceTree = "<group>"; };
 		C838A60C2A610BE400771CB4 /* placapp2UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = placapp2UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C86812652A71DAB900ADCC0C /* Details.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Details.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,7 @@
 		6F9C9EB32A61A24D003E00BA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C86812642A71DA9900ADCC0C /* Details */,
 				6F9C9ED52A61B98C003E00BA /* AddLicense */,
 				6F9C9ED22A61AB2B003E00BA /* ContentPreviews */,
 				6F9C9ECC2A61A448003E00BA /* HeaderView */,
@@ -202,6 +207,14 @@
 				C838A60C2A610BE400771CB4 /* placapp2UITestsLaunchTests.swift */,
 			);
 			path = placapp2UITests;
+			sourceTree = "<group>";
+		};
+		C86812642A71DA9900ADCC0C /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				C86812652A71DAB900ADCC0C /* Details.swift */,
+			);
+			path = Details;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -340,6 +353,7 @@
 				6F000B722A66D8F80042AE28 /* LicenseModel.xcdatamodeld in Sources */,
 				C838A5F02A610BE100771CB4 /* placapp2App.swift in Sources */,
 				6F9C9ECE2A61A457003E00BA /* HeaderView.swift in Sources */,
+				C86812662A71DAB900ADCC0C /* Details.swift in Sources */,
 				6F9C9EB62A61A282003E00BA /* NavBar.swift in Sources */,
 				6F9C9ED72A61B9A4003E00BA /* AddLicense.swift in Sources */,
 				6F9C9ED42A61AB40003E00BA /* ContentView_Previews.swift in Sources */,
@@ -350,6 +364,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C86812672A71DAB900ADCC0C /* Details.swift in Sources */,
 				C838A6012A610BE400771CB4 /* placapp2Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -360,6 +375,7 @@
 			files = (
 				C838A60D2A610BE400771CB4 /* placapp2UITestsLaunchTests.swift in Sources */,
 				C838A60B2A610BE400771CB4 /* placapp2UITests.swift in Sources */,
+				C86812682A71DAB900ADCC0C /* Details.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,7 +517,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"placapp2/Preview Content\"";
-				DEVELOPMENT_TEAM = UU6JTSDA8C;
+				DEVELOPMENT_TEAM = D93AZG2998;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -515,7 +531,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.david.placapp22;
+				PRODUCT_BUNDLE_IDENTIFIER = com.david.joselo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -531,7 +547,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"placapp2/Preview Content\"";
-				DEVELOPMENT_TEAM = UU6JTSDA8C;
+				DEVELOPMENT_TEAM = D93AZG2998;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -545,7 +561,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.david.placapp22;
+				PRODUCT_BUNDLE_IDENTIFIER = com.david.joselo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

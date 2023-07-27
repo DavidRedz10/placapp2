@@ -27,7 +27,7 @@ struct NavBar: View {
                 .tabItem {
                     Label("Agregar", systemImage: "plus.circle.fill")
                 }
-            Auto(vehicle: Vehicle(image: Image("Placeholder")))
+            Details()
                 .tabItem {
                     Label("Profile", systemImage: "person.circle")
                 }
